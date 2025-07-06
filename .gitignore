@@ -1,5 +1,6 @@
 # Build directories and binary files
 build/
+install/
 out/
 out/coverage/*
 cmake-build-*/
@@ -34,3 +35,15 @@ $RECYCLE.BIN/
 .TemporaryItems
 ehthumbs.db
 Thumbs.db
+
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+.cache
+
+# pre-commit
+.pre-commit-config.yaml
