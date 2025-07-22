@@ -5,6 +5,14 @@ include(cmake/CPM.cmake)
 # targets
 function(crowbar_setup_dependencies)
 
+  # 查找 LLVM 包 (需要 LLVM 开发包)
+  find_package(LLVM 20.1 REQUIRED CONFIG)
+  # 打印找到的 LLVM 信息
+  message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
+  # 在父目录 CMakeLists.txt 中显式传递变量
+  set(LLVM_DEFINITIONS ${LLVM_DEFINITIONS} PARENT_SCOPE)
+  set(LLVM_INCLUDE_DIRS ${LLVM_INCLUDE_DIRS} PARENT_SCOPE)
+
   # For each dependency, see if it's
   # already been provided to us by a parent project
 
